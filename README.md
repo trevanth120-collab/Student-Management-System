@@ -147,3 +147,17 @@ Through this project, I gained practical experience in:
 ## Author
 
 Developed as a learning project to gain practical experience in full-stack web development.
+
+## Project Screenshots
+
+### Login Page
+![Login Page](screenshots/login-page.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Student Registration
+![Student Registration](screenshots/student-registration.png)
+
+### Student Records
+![Student Records](screenshots/student-records.png)
