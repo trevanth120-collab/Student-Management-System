@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Layout -->
+<div class="main-layout">
+
+   <!-- Sidebar -->
+<aside class="sidebar">
+
+    <h2 class="sidebar-title">Student MS</h2>
+
+    <nav>
+        <a href="#dashboard" class="nav-link">
+            🏠 Dashboard
+        </a>
+
+        <a href="#register" class="nav-link">
+            ➕ Register Student
+        </a>
+
+        <a href="#students" class="nav-link">
+            👨‍🎓 Student Records
+        </a>
+
+        <a href="#analytics" class="nav-link">
+            📊 Department Analytics
+        </a>
+
+        <button type="button" id="logoutBtn" class="nav-link">
+            🚪 Logout
+        </button>
+    </nav>
+
+</aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Dashboard Header -->
+<div class="dashboard-header">
+
+    <div>
+        <h1>Student Management Dashboard</h1>
+        <p>Welcome! Manage your student records easily.</p>
+        <p id="currentDate"></p>
+    </div>
+
+</div>
+
+    <h1>Student Management System</h1>
+    
+
+    <!-- Dashboard Statistics -->
+<div class="dashboard" id="dashboard">
+
+    <div class="stat-card">
+        <h3>Total Students</h3>
+        <p id="totalStudents">0</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Total Departments</h3>
+        <p id="totalDepartments">0</p>
+    </div>
+
+</div>
+
+<!-- Department Chart -->
+<div class="chart-container">
+
+    <h2>Department-wise Students</h2>
+
+    <canvas id="departmentChart"></canvas>
+
+    <h3>Department Summary</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Department</th>
+            <th>Total Students</th>
+        </tr>
+    </thead>
+
+    <tbody id="departmentSummary">
+    </tbody>
+</table>
+
+</div>
+    
+    <h2 id="register">Register New Student</h2>
+
+    <form id="studentForm">
+
+    <label>Student Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    
+
+    <label>Roll Number:</label>
+    <input
+    type="text"
+    id="roll"
+    placeholder="Enter roll number"
+    pattern="[A-Za-z0-9]+"
+    title="Roll number must contain only letters and numbers"
+    required
+>
+
+    
+
+    <label>Email:</label>
+    <input type="email" id="email" placeholder="Enter email" required>
+
+    
+
+    <label>Department:</label>
+
+<select id="department" required>
+    <option value="">Select Department</option>
+    <option value="IT">Information Technology (IT)</option>
+    <option value="CSE">Computer Science (CSE)</option>
+    <option value="ECE">Electronics (ECE)</option>
+    <option value="EEE">Electrical (EEE)</option>
+    <option value="MECH">Mechanical (MECH)</option>
+    <option value="CIVIL">Civil</option>
+</select>
+
+    
+
+    <button type="submit">Register Student</button>
+
+</form>
+
+<div id="editFormContainer" style="display: none;">
+
+    <h2>Edit Student Details</h2>
+
+    <form id="editStudentForm">
+
+        <input type="hidden" id="editStudentId">
+
+        <label>Student Name:</label>
+        <input type="text" id="editName">
+
+        <label>Roll Number:</label>
+        <input type="text" id="editRoll">
+
+        <label>Email:</label>
+        <input type="email" id="editEmail">
+
+        <label>Department:</label>
+        <select id="editDepartment" required>
+    <option value="">Select Department</option>
+    <option value="IT">IT</option>
+    <option value="CSE">CSE</option>
+    <option value="ECE">ECE</option>
+    <option value="EEE">EEE</option>
+    <option value="MECH">MECH</option>
+    <option value="CIVIL">CIVIL</option>
+</select>
+
+        <button type="submit">Update Student</button>
+
+        <button type="button" id="cancelEdit">Cancel</button>
+
+    </form>
+
+</div>
+
+    <h2 id="students">Registered Students</h2>
+    
+
+<div class="chart-container" id="analytics">
+    <input
+        type="search"
+        id="studentSearch"
+        placeholder="Search by student name or roll number..."
+    >
+    <select id="departmentFilter">
+    <option value="">All Departments</option>
+    <option value="IT">IT</option>
+    <option value="CSE">CSE</option>
+    <option value="ECE">ECE</option>
+    <option value="EEE">EEE</option>
+    <option value="MECH">MECH</option>
+    <option value="CIVIL">CIVIL</option>
+</select>
+</div>
+<button type="button" id="exportBtn">
+    Export to Excel
+</button>
+
+    <table border="1" align="center" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentList">
+        </tbody>
+    </table>
+</main>
+
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
