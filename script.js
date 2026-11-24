@@ -29,7 +29,7 @@ const cancelEdit = document.getElementById("cancelEdit");
 const searchInput = document.getElementById("studentSearch");
 const departmentFilter = document.getElementById("departmentFilter");
 // FastAPI URL
-const API_URL = "http://127.0.0.1:8000/students";
+const API_URL = "https://student-management-system-3rni.onrender.com/students";
 
 // Send authentication token with API requests
 async function apiFetch(url, options = {}) {

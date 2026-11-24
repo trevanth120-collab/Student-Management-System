@@ -15,7 +15,7 @@ loginForm.addEventListener("submit", async function(event) {
 
     try {
 
-        const response = await fetch("http://127.0.0.1:8000/token", {
+       const response = await fetch("https://student-management-system-3rni.onrender.com/token", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
